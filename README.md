@@ -90,6 +90,11 @@ tesButton(..., text='underline', background='#37474f', textcolor='orange', style
 
 > tesSimpleButton and tesSmallButton is designed for simple or small controls.
 
+<p align="center">
+  <img src="/images/tesSmallButton.png" width='100%'></a> 
+</p>
+
+
 ``example``
 
 ```py
@@ -136,7 +141,7 @@ lf = tesFrame(container, style='labelFrame', animation='border') ; lf.pack()
 
 ## tesCombobox - widget
 
-> Widget tesCombobox... Supports.
+> Widget tesCombobox... Supports border animation.
 
 <p align="center">
   <img src="/images/tesCombobox.png" width='50%'>
@@ -153,7 +158,7 @@ tesCombobox(container, value_list=os_list, command=func).pack()
 
 ## tesSpinbox - widget
 
-> Widget tesSpinbox... Supports.
+> Widget tesSpinbox... Supports border and button animation.
 
 <p align="center">
   <img src="/images/tesSpinbox.png" width='50%'>
@@ -165,6 +170,23 @@ tesCombobox(container, value_list=os_list, command=func).pack()
 from widget import tesSpinbox
 
 tesSpinbox(container, mini=0, maxi=100, step=10, value=20).pack()
+```
+
+## tesText - widget
+
+> Widget tesText... Supports border animations.
+
+<p align="center">
+  <img src="/images/tesText.png" width='50%'>
+</p>
+
+``example``
+
+```py
+from widgets import tesText
+
+text = tesText(container) ; text.pack()
+text.tkintertext.insert(1.0, 'Some Text')
 ```
 
 ## tesNotification - widget
@@ -238,6 +260,29 @@ app = App()
 '''AppInformation expects data type dict'''
 tesSmallButton(app, command=AppInformation).pack(expand=True)
 app.mainloop()
+```
+
+## tesTk - own module
+
+> tesTk supports custom modules based on tesTk widgets. tesAskQuestion.
+
+<p align="center">
+  <img style="display: inline-block" src="/images/ask_question.png" width='50%'>
+</p>
+
+``example``
+
+```py
+from widgets import tesButton
+from tesmodule import AskQuestion
+
+def your_function():
+	popup = tesAskQuestion()
+	if popup.answer:
+		# Execute the program.
+		pass
+
+tesButton(container, command=your_function).pack()
 ```
 
 Sample Demos
