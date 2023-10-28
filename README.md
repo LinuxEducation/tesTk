@@ -91,7 +91,7 @@ tesButton(..., text='underline', background='#37474f', textcolor='orange', style
 > tesSimpleButton and tesSmallButton is designed for simple or small controls.
 
 <p align="center">
-  <img src="/images/tesSmallButton.png" width='100%'></a> 
+  <img src="/images/tesSmallButton.png" width='50%'></a> 
 </p>
 
 
@@ -274,7 +274,7 @@ app.mainloop()
 
 ```py
 from widgets import tesButton
-from tesmodule import AskQuestion
+from tesmodule import tesAskQuestion
 
 def your_function():
 	popup = tesAskQuestion()
