@@ -195,7 +195,7 @@ text.tkintertext.insert(1.0, 'Some Text')
 <p align="center">
   <img style="display: inline-block" src="/images/notification1.png" width='30%'>
   <img style="display: inline-block" src="/images/notification2.png" width='30%'>
-  <img style="display: inline-block" src="/images/notification3.png" width='30%''>
+  <img style="display: inline-block" src="/images/notification3.png" width='30%'>
 </p>
 
 ``example``
@@ -205,7 +205,7 @@ from widgets import tesNotufication
 
 tesNotification().type('missed', container, icon='./icons/missed.png', title='Missed Call', subtitle='784604058', report=['list objects']).pack()
 tesNotification().type('weather', container, icon='./icons/weather.png' ,title='Weather', subtitle='Rain and strong wind', report=['list objects']).pack()
-tesNotification().type('player', container, icon='./icons/music.png', title='Paused', subtitle='Kings Of Leon - Sex on Fire')pack()
+tesNotification().type('player', container, icon='./icons/music.png', title='Paused', subtitle='Kings Of Leon - Sex on Fire').pack()
 ```
 
 ## tesProgress - widget
@@ -246,7 +246,7 @@ app = App()
 box = tesWidgetBox(app, width_max=300, height_max=600, separator=None) ; box.pack()
 tesText(box.tkinterframe, text='default').pack(side='top')
 tesLabel(box.tkinterframe, text='tesTk is Tkinter\'s modern widgets design').pack(side='left')
-tesButton(box.tkinterframe, icon='./image/tesTk.png').pack(side='right')
+tesButton(box.tkinterframe, icon='./images/tesTk.png').pack(side='right')
 app.mainloop()
 ```
 
@@ -256,7 +256,7 @@ app.mainloop()
 
 <p align="center">
   <img style="display: inline-block" src="/images/app_information.png" width='45%'>
-  <img style="display: inline-block" src="/images/app_information.png" width='45%'>
+  <img style="display: inline-block" src="/images/app_module.png" width='45%'>
 </p>
 
 ``example``
