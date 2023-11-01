@@ -94,7 +94,6 @@ tesButton(..., text='underline', background='#37474f', textcolor='orange', style
   <img src="/images/tesSmallButton.png" width='50%'></a> 
 </p>
 
-
 ``example``
 
 ```py
@@ -229,25 +228,35 @@ tesProgress(window, 160, 70, 16, 7, style=4, loop=3)
 window.mainloop()
 ```
 
-## tesLabel - widget
+## tesWidgetBox - widget
 
-> Supports background animation or borders and sets text positions.
+> tesWidgetBox is a box, a container for creating custom widgets. You can set the title, maximum width and maximum height of the widget and place all other widgets in it. Very importantly, the size of this widget changes.
+
+<p align="center">
+  <img style="display: inline-block" src="/images/tesWidgetBox_real.png" width='45%'>
+</p>
 
 ``example``
 
 ```py
-from widgets import tesLabel
+from tkmodule import App
+from widgets import tesWidgetBox, tesText, tesLabel, tesButton
 
-tesLabel(..., text='Ready To Work', bordercolor='black', animation='border',).grid()
-tesLabel(..., text='Loading', background='orange', backgroundidx=3, animation='background', textposition='center').pack()
+app = App()
+box = tesWidgetBox(app, width_max=300, height_max=600, separator=None) ; box.pack()
+tesText(box.tkinterframe, text='default').pack(side='top')
+tesLabel(box.tkinterframe, text='tesTk is Tkinter\'s modern widgets design').pack(side='left')
+tesButton(box.tkinterframe, icon='./image/tesTk.png').pack(side='right')
+app.mainloop()
 ```
 
 ## tesTk - tkinter module
 
-> tesTk also supports modules based only on the tkinter library. App and AppInformation module.
+> tesTk also supports modules based only on the tkinter library... the App and AppInformation module. You can use the App module to create a custom dialog box. The App module allows you to display resolution information.
 
 <p align="center">
-  <img style="display: inline-block" src="/images/app_information.png" width='50%'>
+  <img style="display: inline-block" src="/images/app_information.png" width='45%'>
+  <img style="display: inline-block" src="/images/app_information.png" width='45%'>
 </p>
 
 ``example``
@@ -256,7 +265,7 @@ tesLabel(..., text='Loading', background='orange', backgroundidx=3, animation='b
 from tkmodule import App, AppInformation
 from widgets import tesSmallButton
 
-app = App()
+app = App(resolution=True)
 '''AppInformation expects data type dict'''
 tesSmallButton(app, command=AppInformation).pack(expand=True)
 app.mainloop()
@@ -283,6 +292,19 @@ def your_function():
 		pass
 
 tesButton(container, command=your_function).pack()
+```
+
+## tesLabel - widget
+
+> Supports background animation or borders and sets text positions.
+
+``example``
+
+```py
+from widgets import tesLabel
+
+tesLabel(..., text='Ready To Work', bordercolor='black', animation='border',).grid()
+tesLabel(..., text='Loading', background='orange', backgroundidx=3, animation='background', textposition='center').pack()
 ```
 
 Sample Demos
