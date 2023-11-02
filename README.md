@@ -11,7 +11,7 @@
 > Tool for basic widget configuration. Widget shape, background and foreground layer, font style and size, setting images and their positions. Easy and fast generation of widget parameters.
 
 <p align="center">
-  <img src="/images/WidgetCreatorTool.png" width='50%' height='30%'>
+  <img src="/images/WidgetCreatorTool2.png" width='50%' height='30%'>
 </p>
 
 ``example``
