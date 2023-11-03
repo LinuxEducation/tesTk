@@ -23,18 +23,19 @@ from widgets import tesButton
 settings = {
 	'width':            200,
 	'height':           44,
-	'radius':           11,
-	'backgroundidx':    1,
+	'backgroundidx':    2,
 	'bordercoloridx':   3,
-	'fontsize':         18,
+	'fontsize':         19,
+	'textoffset':       6,
+	'iconoffset':       7,
 	'background':       'sea blue',
 	'bordercolor':      'black',
-	'text':             'Widget',
 	'textcolor':        'white',
 	'fonttype':         'Arial',
+	'textposition':     'center',
+	'text':             'tesTk',
 	'icon':             './icons/tk_smal.png',
 	'iconposition':     'w',
-	'iconoffset':       5,
 	'style':            'simple'}
 
 app = App()
@@ -230,7 +231,7 @@ window.mainloop()
 
 ## tesWidgetBox - widget
 
-> tesWidgetBox is a box, a container for creating custom widgets. You can set the title, maximum width and maximum height of the widget and place all other widgets in it. Very importantly, the size of this widget changes.
+> tesWidgetBox is a box, a container for creating custom widgets. You can set the title, maximum width and maximum height of the widget and place all other widgets in it. Very importantly, the size of this widget changes. It supports border animation. This widget is used in WidgetCreatorTool
 
 <p align="center">
   <img style="display: inline-block" src="/images/tesWidgetBox_real.png" width='45%'>
