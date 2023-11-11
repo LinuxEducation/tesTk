@@ -1,3 +1,6 @@
+> [!NOTE]
+> More information about TesTk can be found on the [Wiki](https://github.com/LinuxEducation/tesTk/wiki). I invite you to [discus](https://github.com/LinuxEducation/tesTk/discussions).
+
 ## tesTk - Tkinter Widget's
 
 > tesTk is Tkinter's modern widgets design. It is based on the tkinter canvas widget. You can use tesTk just like tkinter.
@@ -231,7 +234,7 @@ window.mainloop()
 
 ## tesWidgetBox - widget
 
-> tesWidgetBox is a box, a container for creating custom widgets. You can set the title, maximum width and maximum height of the widget and place all other widgets in it. Very importantly, the size of this widget changes. It supports border animation. This widget is used in WidgetCreatorTool
+> tesWidgetBox is a box, a container for creating custom widgets. You can set the title, maximum width and maximum height of the widget and place all other widgets in it. Very importantly, the size of this widget changes. It supports border animation. This widget is used in WidgetCreatorTool.
 
 <p align="center">
   <img style="display: inline-block" src="/images/tesWidgetBox_real.png" width='45%'>
