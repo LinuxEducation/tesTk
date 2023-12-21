@@ -28,6 +28,7 @@ class WidgetShape(Canvas, ABC):
             textoffset = 0,
             fonttype = 'Verdana',
             fontsize=16,
+            fontformat='',
             icon=None,
             iconposition='w',
             iconoffset = 0,
@@ -53,6 +54,7 @@ class WidgetShape(Canvas, ABC):
 
         self.fonttype = fonttype
         self.fontsize = fontsize
+        self.fontformat = fontformat
         self.animation = animation
         self.color_number_idx = 0
 
@@ -175,7 +177,7 @@ class WidgetShape(Canvas, ABC):
             y = 0
         if self.textposition == 's':
             y = self.height - 1
-        self.create_text(x + self.textoffset, y, text=self.text, fill=self.textcolor, font=(f'{self.fonttype}', self.fontsize), anchor=self.textposition, tags='text')
+        self.create_text(x + self.textoffset, y, text=self.text, fill=self.textcolor, font=(self.fonttype, self.fontsize, self.fontformat), anchor=self.textposition, tags='text')
 
     def insert_image(self) -> None:
         shadow = 0
@@ -194,13 +196,13 @@ class WidgetShape(Canvas, ABC):
             y = self.height - self.border - shadow
         if self.iconposition == 'nw':
             x = self.border
-            y = 0
+            y = 0 + self.border + 1
         if self.iconposition == 'se':
             x = self.width - self.border - shadow
             y = self.height - self.border - shadow
         if self.iconposition == 'ne':
             x = self.width - self.border - shadow
-            y = 0
+            y = 0 + self.border + 1
         self.create_image(x+self.iconoffset, y, image=self.icon, anchor=self.iconposition, tags='icon')
 
     def draw_recording_diode(self, size: int) -> None:
@@ -241,8 +243,10 @@ class WidgetSetting(ABC):
                 raise BadParameter(key)
             if not value:
                 self.__dict__[key] = value
-            if type(value) != type(self.__dict__[key]):
-                raise BadType(value, str(type(self.__dict__[key])))
+            if key == 'border':
+                print(value)
+            # if type(value) != type(self.__dict__[key]):
+            #     raise BadType(value, str(type(self.__dict__[key])))
             '''update the widget attributes'''
             self.__dict__[key] = value
 
@@ -299,12 +303,12 @@ class WidgetSetting(ABC):
     def set_color(self, background_color_set: bool = False, bordercolor_set: bool = False) -> None:
         ''' if *idx is set and color name is in the dictionary...
             get char from the list '''
-        if type(self.backgroundidx) is int:
+        if isinstance(self.backgroundidx, int):
             if self.background_name not in self.get_colors().keys():
                 raise BadAnimationParameter(self.background_name)
             self.background = self.get_colors(self.background_name)[self.backgroundidx]
             background_color_set = True
-        if type(self.bordercoloridx) is int:
+        if isinstance(self.bordercoloridx, int):
             if self.bordercolor_name not in self.get_colors().keys():
                 raise BadAnimationParameter(self.bordercolor_name)
             self.bordercolor = self.get_colors(self.bordercolor_name)[self.bordercoloridx]

@@ -1,1 +1,1 @@
-__all__ = ['tesAskQuestion', 'tesShowInfo']from .tesAskQuestion import tesAskQuestionfrom .tesShowInfo import tesShowInfo
+__all__ = ['tesAskQuestion', 'tesShowInfo', 'tesSimpleSettingMenu']from .tesAskQuestion import tesAskQuestionfrom .tesShowInfo import tesShowInfofrom .tesSimpleSettingMenu import tesSimpleSettingMenu

@@ -1,0 +1,1 @@
+import jsondef write_user_settings(settings_data: dict, settings_file: str) -> None:    with open(settings_file, 'w') as file:        json.dump(settings_data, file, indent=4)def read_user_settings(settings_file: str) -> dict:    with open(settings_file, 'r') as file:        settings = json.load(file)    return settings

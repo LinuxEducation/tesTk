@@ -1,5 +1,5 @@
 > [!NOTE]
-> More information about TesTk can be found on the [Wiki](https://github.com/LinuxEducation/tesTk/wiki). I invite you to [discus](https://github.com/LinuxEducation/tesTk/discussions).
+> More information about tesTk can be found on the [Wiki](https://github.com/LinuxEducation/tesTk/wiki). I invite you to [discus](https://github.com/LinuxEducation/tesTk/discussions).
 
 ## tesTk - Tkinter Widget's
 
@@ -277,7 +277,7 @@ app.mainloop()
 
 ## tesTk - own module
 
-> tesTk supports custom modules based on tesTk widgets. tesAskQuestion.
+> tesTk supports custom modules based on tesTk widgets. tesAskQuestion, tesShowInfo or tesSimpleSettingMenu.
 
 <p align="center">
   <img style="display: inline-block" src="/images/ask_question.png" width='50%'>
