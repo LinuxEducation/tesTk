@@ -4,8 +4,7 @@ from func.color_palette import get_colors
 from func.icon_database import icon_database
 from func.setting_data import write_user_settings, read_user_settings
 from tkmodule import AppInformation
-from tesmodule import tesSimpleSettingMenu as SM
-from tesmodule import tesShowInfo
+from tesmodule import tesShowInfo, tesSimpleSettingMenu as SM
 import time
 import random
 import os
@@ -118,7 +117,7 @@ class App(Tk):
     def insert_widget(self) -> None:
         self.widget = tesButton(self, **widget_settings('widget'), command=self.increment_widget_value)
         self.widget.pack(expand=True)
-        self.widget.path = None
+        # self.widget.path = None
 
     def load_user_settings(self) -> None:
         if os.path.exists('bg_menu_settings.json'):
@@ -130,7 +129,7 @@ class App(Tk):
 
     def change_widgets_settings(self, settings_file: str) -> None:
         # change:  shadow, font format, icon position
-        settings = read_user_settings(settings_file)
+        settings = read_user_settings(settings_file=settings_file)
         font_format = ''
 
         for tags, value in settings.items():
@@ -256,9 +255,10 @@ class App(Tk):
     def change_icon_position(self, position) -> None:
         if self.widget_icon_active:
             self.widget.change_image_position(position)
-            settings = read_user_settings('fg_menu_settings.json')
-            settings['iconposition'] = [position, settings['iconposition'][-1]]
-            write_user_settings(settings_data=settings, settings_file='fg_menu_settings.json')
+            if os.path.exists('fg_menu_settings.json'):
+                settings = read_user_settings('fg_menu_settings.json')
+                settings['iconposition'] = [position, settings['iconposition'][-1]]
+                write_user_settings(settings_data=settings, settings_file='fg_menu_settings.json')
             self.status['text'] = 'Update'
 
     def insert_app_status(self) -> None:
@@ -498,10 +498,13 @@ class AppMenu(Frame):
         self.resize_y = PhotoImage(file="./icons/resize_y.png").subsample(2, 2)
         self.rotate = PhotoImage(file="./icons/rotate.png").subsample(2, 2)
 
-        background_data = {'shadow': [True, 'Draw the \'shadow\' of the Widget'],
+        background_data = {'separator': 'Background',
+                           'shadow': [True, 'Draw the \'shadow\' of the Widget'],
                            'border': [None, 'Draw the \'border\' of the Widget']}
 
-        foreground_data = {'iconposition': ['w', 'Precise position of the \'icon\':  c, w, n, e, s, sw, nw, se, ne'],
+        foreground_data = {'separator': 'Icon position',
+                           'iconposition': ['w', 'Precise position of the \'icon\':  c, w, n, e, s, sw, nw, se, ne'],
+                           'separator2': 'Font format',
                            'bold': [False, 'Use \'bold\' font'],
                            'italic': [False, 'Use \'italic\' font'],
                            'underline': [False, 'Use \'undeline\' font']}
