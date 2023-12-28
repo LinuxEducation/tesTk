@@ -390,7 +390,7 @@ class App(Tk):
                         if value in ('nw', 'n', 'ne', 'w', 'e', 'sw', 's', 'se', 'c', 'center'):
                             self.update_settings(textposition=value)
                             self.status['text'] = 'Update'
-                        save_settings = True
+                            save_settings = True
 
             if isinstance(item.get(), int):
                 if item.tags == 'textoffset':
