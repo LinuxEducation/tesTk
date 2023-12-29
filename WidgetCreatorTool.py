@@ -117,7 +117,7 @@ class App(Tk):
     def insert_widget(self) -> None:
         self.widget = tesButton(self, **widget_settings('widget'), command=self.increment_widget_value)
         self.widget.pack(expand=True)
-        # self.widget.path = None
+        self.widget.path = None
 
     def load_user_settings(self) -> None:
         if os.path.exists('bg_menu_settings.json'):
@@ -226,7 +226,6 @@ class App(Tk):
             self.insert_widget_icon()
         else:
             self.delete_widget_icon()
-            self.widget.icon = None
 
     def insert_widget_icon(self) -> None:
         name = self.menu.get_widget_tite()
@@ -246,6 +245,7 @@ class App(Tk):
             self.status['text'] = 'Update'
 
     def delete_widget_icon(self) -> None:
+        self.widget.icon = None
         self.widget.itemconfig('icon', image='')
         settings = read_user_settings('global_settings.json')
         settings['icon'] = ['False', None]
@@ -553,7 +553,7 @@ class AppMenu(Frame):
                           button_color_idx=1,
                           **widget_settings('box'),
                           widget_box_setting=lambda: SM(self,
-                                                        window_x=450,
+                                                        window_x=470,
                                                         window_y=250,
                                                         setting_data=foreground_data,
                                                         setting_file='fg_menu_settings.json',
