@@ -100,7 +100,7 @@ class App(Tk):
         self.menu.tesl.widget_animation()
         self.status['text'] = 'Copied:  ' + char
         if not self.hexcode_info:
-            tesShowInfo(self, 'Widget Colors', 'Hex Code copied to Clipboard. Use: Ctrl+V')
+            tesShowInfo('Widget Colors', 'Hex Code copied to Clipboard. Use: Ctrl+V')
             self.hexcode_info = True
 
     def get_ui_geometry(self) -> tuple[float, float, float, float]:
@@ -159,7 +159,7 @@ class AppMenu(Frame):
                            'background':        'gray',
                            'backgroundidx':     0,
                            'bordercolor':       'black',
-                           'bordercoloridx':    3,
+                           'bordercoloridx':    5,
                            'textcolor':         'white',
                            'style':             'simple',
                            'animation':         'border',
@@ -185,11 +185,11 @@ class AppMenu(Frame):
 
         #Color Palette
         color = Label(self, text='Color Palette', **label_settings)
-        self.combo = tesCombobox(self, width=200, animation='border', background='#424242', bordercolor='black', bordercoloridx=3, radius=11, value_list=combobox_list, command=self.change_color_palette)
+        self.combo = tesCombobox(self, width=200, animation='border', background='#424242', bordercolor='black', bordercoloridx=5, radius=11, value_list=combobox_list, command=self.change_color_palette)
         #Hex Code
         self.hex_value = StringVar(self, 'Hex')
         self.hex = Label(self, textvariable=self.hex_value, **label_settings)
-        self.tesl = tesLabel(self, background='gray', radius=11, bordercolor='black', bordercoloridx=3, animation='background', text='#0000', textposition='w', textcolor='white', fontsize=14)
+        self.tesl = tesLabel(self, background='gray', radius=11, bordercolor='black', bordercoloridx=5, animation='background', text='#0000', textposition='w', textcolor='white', fontsize=14)
         #How To Use
         use = Label(self, text='How To Use', **label_settings)
         tips = tesButton(self, **button_settings, command=self.display_tip)

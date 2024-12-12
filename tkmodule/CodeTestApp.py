@@ -38,10 +38,6 @@ class App(Tk):
         self.resolution.configure(text=f'{window_x}x{window_y}')
 
 
-
-
-
-
 if __name__ == '__main__':
     app = App('Window Container')
     app.message()

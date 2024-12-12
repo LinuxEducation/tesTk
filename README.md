@@ -291,7 +291,7 @@ from tesmodule import tesAskQuestion
 
 def your_function():
 	popup = tesAskQuestion()
-	if popup.answer:
+	if popup or popup.answer:
 		# Execute the program.
 		pass
 

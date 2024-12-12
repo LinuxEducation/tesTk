@@ -470,7 +470,7 @@ class App(Tk):
         if self.status['text'] != 'Copied!  Use: Ctrl+V':
             self.status['text'] = 'Copied!  Use: Ctrl+V'
         if not self.settings_info:
-            tesShowInfo(self, 'Widget Settings', 'Settings copied to Clipboard. Use: Ctrl+V')
+            tesShowInfo('Widget Settings', 'Settings copied to Clipboard. Use: Ctrl+V')
             self.settings_info = True
 
 
